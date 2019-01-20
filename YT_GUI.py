@@ -12,7 +12,6 @@ def browse_button():
     global filename
     filename = filedialog.askdirectory()
     folder_path.set(filename)
-    print(filename)
 
 def download():
     try:
@@ -22,6 +21,10 @@ def download():
         os.chdir(PATH)
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             ydl.download([URL])
+            Notification.configure(text=ydl_opts, fg='black', bg="SpringGreen3", width=50, font=('times', 17, 'bold'))
+            Notification.place(x=350, y=500)
+            Notification.after(2000)
+
 
         noty='Your video downloaded'
         Notification.configure(text=noty,fg='black', bg="SpringGreen3", width=50, font=('times', 17, 'bold'))
@@ -31,16 +34,24 @@ def download():
 
 window = tk.Tk()
 folder_path = StringVar()
-window.title("Youtube video downloader")
+window.title("Youtube Video Downloader")
+window.iconbitmap('yt.ico')
 
-window.geometry('1280x720')
+width, height = window.winfo_screenwidth(), window.winfo_screenheight()
+
+window.geometry('%dx%d+0+0' % (width,height))
+# window.geometry('1300x720')
 window.configure(background='snow')
-window.grid_rowconfigure(0, weight=1)
-window.grid_columnconfigure(0, weight=1)
+# window.grid_rowconfigure(0, weight=1)
+# window.grid_columnconfigure(0, weight=1)
 
 message = tk.Label(window, text="Youtube video downloader", bg="SpringGreen3", fg="black", width=50,
                    height=3, font=('times', 30, 'italic bold '))
 message.place(x=80, y=20)
+
+my_name = tk.Label(window, text="©Developed by Kushal Bhavsar", bg="orange red", fg="black", width=60,
+                   height=1, font=('times', 30, 'italic bold '))
+my_name.place(x=00, y=607)
 
 Notification = tk.Label(window, text="Video downloaded from kushal bhavsar", bg="Green", fg="white", width=35,
                    height=3, font=('times', 17, 'bold'))
