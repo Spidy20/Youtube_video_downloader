@@ -21,3 +21,9 @@ It is just simple GUI which are made with Tkinter, it can download any of youtub
 
 
 <img src="https://github.com/Spidy20/Youtube_video_downloader/blob/master/Screenshot%20(22).png">
+
+
+
+### How it works? See:)
+
+<img src="https://github.com/Spidy20/Youtube_video_downloader/blob/master/Yt_downloader.gif">
