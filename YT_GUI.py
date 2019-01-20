@@ -24,8 +24,6 @@ def download():
             Notification.configure(text=ydl_opts, fg='black', bg="SpringGreen3", width=50, font=('times', 17, 'bold'))
             Notification.place(x=350, y=500)
             Notification.after(2000)
-
-
         noty='Your video downloaded'
         Notification.configure(text=noty,fg='black', bg="SpringGreen3", width=50, font=('times', 17, 'bold'))
         Notification.place(x=350, y=500)
