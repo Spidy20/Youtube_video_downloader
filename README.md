@@ -1,4 +1,5 @@
-### Youtube video Downloader
+### Youtube video Downloader [![](https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg)](https://github.com/Spidy20/Youtube_video_downloader/blob/master/LICENSE)
+
 
 ### Code Requirements
 - Youtube_dl library 
