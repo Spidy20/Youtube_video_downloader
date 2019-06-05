@@ -5,7 +5,7 @@ import os
 import youtube_dl
 
 def clear():
-    url.delete(first=0, last=70)
+    url.delete(first=0, last=50)
 
 def browse_button():
     global folder_path
@@ -20,12 +20,9 @@ def download():
         ydl_opts = {}
         os.chdir(PATH)
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-            window.title('Downloading... ' + URL)
             ydl.download([URL])
-        print(ydl_opts)
         noty='Your video Downloaded'
-        window.title(noty)
-        Notification.configure(text=noty,fg='black', bg="SpringGreen3", width=50, font=('times', 17, 'bold','italic'))
+        Notification.configure(text=noty,fg='white', bg="black", width=50, font=('times', 17, 'bold','italic'))
         Notification.place(x=350, y=500)
     except Exception as e:
         print(e)
